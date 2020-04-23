@@ -15,6 +15,25 @@ class BinaryNode
 * invertTree function goes here
 */
 
+function invertTree($level)
+{
+    if (is_object($level)) {
+        $left = $level->left;
+        $right = $level->right;
+
+        $level->left = $right;
+        $level->right = $left;
+
+        if (!empty($level->right)) {
+            invertTree($level->right);
+        }
+
+        if (!empty($level->left)) {
+            invertTree($level->left);
+        }
+    }
+}
+
 class InvertBinaryTreeTest extends \PHPUnit_Framework_TestCase
 {
     public function testInvert()
