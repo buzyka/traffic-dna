@@ -1,6 +1,4 @@
 <?php
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
 /**
 * get the number which occurs odd times in the source array
 *
@@ -19,13 +17,13 @@ function getOddNumber($srcValues) {
 
 }
 
-// class OddNumberTest extends \PHPUnit_Framework_TestCase
-// {
-//     public function testOddNumber()
-//     {
-//         $result = getOddNumber([2,5,9,1,5,1,8,2,8]);
-//         $this->assertEquals(9,$result);
-//         $result = getOddNumber([2,3,4,3,1,4,5,1,4,2,5]);
-//         $this->assertEquals(4,$result);
-//     }
-// }
+class OddNumberTest extends \PHPUnit_Framework_TestCase
+{
+    public function testOddNumber()
+    {
+        $result = getOddNumber([2,5,9,1,5,1,8,2,8]);
+        $this->assertEquals(9,$result);
+        $result = getOddNumber([2,3,4,3,1,4,5,1,4,2,5]);
+        $this->assertEquals(4,$result);
+    }
+}
